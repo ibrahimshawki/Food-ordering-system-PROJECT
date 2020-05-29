@@ -143,6 +143,7 @@
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\DetailsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomePageController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -239,10 +240,12 @@
     <Content Include="Views\Details\Update.cshtml" />
     <Content Include="Views\Details\Details.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
+    <Content Include="Views\HomePage\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />
     <Folder Include="Uploads\" />
+    <Folder Include="Views\admin\" />
     <Folder Include="Views\ViewItemDetails\" />
   </ItemGroup>
   <ItemGroup>

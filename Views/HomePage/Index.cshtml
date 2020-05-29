@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Food_ordering_system_PROJECT.Models.Product>
+
+@{
+    ViewBag.Title = "HomePage";
+}
+
+<h2>HomePage</h2>
+<p>
+   
+
+    @Html.ActionLink("View Cart", "Index", "Cart", new { @class = "btn btn-primary" })
+</p>
+
+<div class="row">
+
+    @foreach (var item in Model)
+    {<div style="display:inline-block">
+            <ul>
+                <li> @Html.DisplayFor(modelc => item.name) </li>
+
+                <li>
+                    <img src="~/Image/@Html.DisplayFor(modelc => item.image)"
+                         class="thumbnail"
+                         style="width:150px; height:150px;" />
+
+                </li>
+
+                <li>
+                    @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-success" })
+                    <input type="button" value="Add To Cart" class="btn btn-default" />
+                </li>
+            </ul>
+        </div>
+    }
+
+</div>
+
