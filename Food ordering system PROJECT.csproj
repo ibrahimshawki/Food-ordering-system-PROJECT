@@ -241,6 +241,7 @@
     <Content Include="Views\Details\Details.cshtml" />
     <Content Include="Views\User\Registration.cshtml" />
     <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Views\User\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Data\" />

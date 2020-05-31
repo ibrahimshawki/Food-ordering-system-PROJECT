@@ -44,5 +44,44 @@ namespace Food_ordering_system_PROJECT.Controllers
 
             return View("Registration", new User());
         }
+
+        // GET:User
+        [HttpGet]
+        public ActionResult Login()
+        {
+
+            return View();
+        }
+        //Post:User
+        [HttpPost]
+        public ActionResult Login([Bind(Include = "e-mail,Password")] User user)
+        {
+            using (StoreEntities db = new StoreEntities())
+            {
+                var rec = db.Users.Where(x => x.e_mail == user.e_mail  &&  x.password == user.password).ToList().FirstOrDefault();
+                if (rec != null)
+                {
+                    Session["UserID"] = rec.UserID;
+                    Session["UserName"] = rec.e_mail;
+                    return RedirectToAction("Index");
+                }
+                else
+                {
+                    ViewBag.error = "Invalid User";
+                    return View("Login",user);
+
+                }
+
+            }
+        }
+
+
+
+
+
+
+
+
+
     }
 }
